@@ -10,3 +10,86 @@
     margin: 0;
     font-family: 'distant_galaxy';
 }
+
+a:link, a:visited {
+    color: white;
+    text-decoration: none;
+}
+
+.nav-btn:link, .nav-btn:visited {
+    color: #000;
+    text-decoration: none;
+}
+
+body {
+    height: 100vh;
+    display: grid;
+    grid-template-rows: 72px 10fr;
+}
+
+.background-div {
+    background-image: url(./wallpaper.jpg);
+    background-size: cover;
+    height: calc(100vh - 72px);
+    width: 100vw;
+}
+
+.header {
+    background-color: #000;
+    color: white;
+    font-size: 1.3rem;
+    display: grid;
+    grid-template-columns: 60% 40%;
+}
+
+.title {
+    font-size: 1.8rem;
+    align-self: center;
+    padding-left: 20px;
+}
+
+.pages {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    gap: 10px;
+}
+
+.main {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+}
+
+.home {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 20px; 
+}
+
+.nav-btn {
+    height: 40px;
+    line-height: 40px;
+    width: 250px;
+    background-color: #EEEEEE;
+    border-radius: 15px;
+    border: 2px solid #000;
+    font-size: 1.5rem;
+    text-align: center;
+}
+
+[data-tab-target] {
+    cursor: pointer;
+}
+
+[data-tab-content] {
+    display: none;
+}
+
+.active[data-tab-content] {
+    display: block;
+}
