@@ -10,16 +10,31 @@
     <header class="header">
         <div class="title">Star Wars catalog</div>
         <div class="pages">
-            <a href="index.html"><div class="home">Home</div></a>
-            <a href="pages/pilots/index.html"><div class="pilots">Pilots</div></a>
-            <a href="pages/starships/index.html"><div class="starships">Starships</div></a>
-            <a href="pages/planets/index.html"><div class="planets">Planets</div></a>
+            <div class="home" data-tab-target="#home">Home</div></a>
+            <div class="pilots" data-tab-target="#pilots">Pilots</div>
+            <div class="starships" data-tab-target="#starships">Starships</div></a>
+            <div class="planets" data-tab-target="#planets">Planets</div></a>
         </div>
     </header>
     <div class="main">
-        <a href="pages/pilots/index.html" class="nav-btn">Pilots</a>
-        <a href="pages/starships/index.html" class="nav-btn">Starships</a>
-        <a href="pages/planets/index.html" class="nav-btn">Planets</a>        
+        <div id="home" data-tab-content class="active">
+            <div class="background-div"></div>
+        </div>
+        <div id="pilots" data-tab-content>
+            <div class="content-title">Pilots</div>
+            <div class="card-organizer"></div>
+            <div class="loading">LOADING...</div>
+        </div> 
+        <div id="starships" data-tab-content>
+            <div class="content-title">Starships</div>
+            <div class="card-organizer"></div>
+            <div class="loading">LOADING...</div>
+        </div>  
+        <div id="planets" data-tab-content>
+            <div class="content-title">Planets</div>
+            <div class="card-organizer"></div>
+            <div class="loading">LOADING...</div>
+        </div>       
     </div>
 </body>
 </html>
