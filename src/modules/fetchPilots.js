@@ -46,7 +46,7 @@ export async function fetchPilots() {
         return pilotsArray;
     }
 
-    let pilots = await addToPilots();
+    const pilots = await addToPilots();
 
     return {pilotImageMap, pilots};
 }
