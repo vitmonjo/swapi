@@ -3,7 +3,7 @@ import { countInstances, checkExistence, getInstances } from "./localStorage"
 export async function fetchPilots() {
 
     let peopleArray = [];
-    let pilots = [];
+    let pilotsArray = [];
 
     const pilotImageMap = {
         'Luke Skywalker': 'https://i.imgur.com/Qoq1cgX.jpeg',
@@ -38,15 +38,15 @@ export async function fetchPilots() {
 
     const addToPilots = async () => {
         const data = await peopleFetching();
-        pilots = data.filter(function (person) {
+        pilotsArray = data.filter(function (person) {
             if (person.starships.length !== 0) {
                 return true;
             }
         })
-        return pilots;
+        return pilotsArray;
     }
 
-    let pilotsTheEnd = await addToPilots();
+    let pilots = await addToPilots();
 
-    return pilotsTheEnd;
+    return {pilotImageMap, pilots};
 }
