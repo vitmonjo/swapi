@@ -18,3 +18,9 @@ export function getInstances(string) {
     }
     return instances;
 }
+
+export function storeRecords(records, caller) {
+    for (let i = 0; i < records.length; i++) {
+        localStorage.setItem(`${caller}-`, `${records[i].name}`);
+    }
+}
