@@ -1,4 +1,4 @@
-import { countInstances, checkExistence, getInstances } from "./localStorage"
+import { countInstances, checkExistence, getInstances, storeRecords } from "./localStorage"
 
 export async function fetchPlanets() {
 
@@ -29,6 +29,8 @@ export async function fetchPlanets() {
     }
 
     const planets = await planetsFetching();
+
+    storeRecords(planets, "PLANET");
 
     return {planetsImageMap, planets};
 }
