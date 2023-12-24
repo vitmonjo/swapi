@@ -67,15 +67,15 @@ export function setTabs() {
                 const loading = document.querySelector('#planets-loading');
                 fetchPlanets().then(function(planets) {
                     deleteAllChildNodes();
-                    for (let i = 0; i <= planets.planets.length - 1; i++) {
+                    for (let i = 0; i <= planets.planetsArray.length - 1; i++) {
                         const card = document.createElement('div');
                         card.classList.add('card');
                         const planetName = document.createElement('div');
                         const placeHolder = document.createElement('img');
                         placeHolder.classList.add('placeholder');
-                        placeHolder.src = (planets.planetsImageMap[planets.planets[i].name] || '../src/images/placeholder.jpeg');
+                        placeHolder.src = (planets.planetsImageMap[planets.planetsArray[i]] || '../src/images/placeholder.jpeg');
                         planetName.classList.add('element-name');
-                        planetName.textContent = planets.planets[i].name;
+                        planetName.textContent = planets.planetsArray[i];
                         card.append(placeHolder, planetName);
                         cardOrganizer.append(card);
                         loading.textContent = '';
