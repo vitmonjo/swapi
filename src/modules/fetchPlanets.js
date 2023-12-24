@@ -1,7 +1,6 @@
-import { countInstances, checkExistence, getInstances, storeRecords } from "./localStorage"
+import { checkExistence, getInstances, storeRecords } from "./localStorage"
 
 export async function fetchPlanets() {
-
     let planetsArray = [];
 
     const planetsImageMap = {
@@ -19,18 +18,27 @@ export async function fetchPlanets() {
         'Utapau': 'https://i.imgur.com/GEYax5y.jpg'
     }
 
+
+    if (checkExistence('PLANET')) planetsArray = getInstances('PLANET');
+
+    if (planetsArray.length > 0) return {planetsImageMap, planetsArray};
+
     const planetsFetching = async () => {
         for (let i = 1; i < 7; i++) {
             let response = await fetch(`https://swapi.dev/api/planets/?page=${i}`);
             let planetsData = await response.json();
-            planetsArray = planetsArray.concat(planetsData.results);
+            for (let i = 0; i < planetsData.results.length; i++) {
+                planetsArray.push(planetsData.results[i].name);
+            }
         }
         return planetsArray;
     }
 
-    const planets = await planetsFetching();
+    let planets = await planetsFetching();
 
-    storeRecords(planets, "PLANET");
+    storeRecords(planets, 'PLANET');
 
-    return {planetsImageMap, planets};
+    planetsArray = planets;
+    
+    return {planetsImageMap, planetsArray};
 }
