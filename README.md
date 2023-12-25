@@ -5,7 +5,7 @@
 ### Technologies Used
 ### Usage
 ### Screenshots
-
+<br>
 ### Features
 #### Asynchronous Programming: 
    This project served as an opportunity to enhance skills in handling asynchronous operations in JavaScript. The following techniques were employed:
