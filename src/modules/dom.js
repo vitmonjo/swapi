@@ -23,15 +23,15 @@ export function setTabs() {
                 const loading = document.querySelector('#pilots-loading');
                 fetchPilots().then(function(pilots) {
                     deleteAllChildNodes();
-                    for (let i = 0; i <= pilots.pilots.length - 1; i++) {
+                    for (let i = 0; i <= pilots.pilotsArray.length - 1; i++) {
                         const card = document.createElement('div');
                         card.classList.add('card');
                         const pilotName = document.createElement('div');
                         const placeHolder = document.createElement('img');
                         placeHolder.classList.add('placeholder');
-                        placeHolder.src = (pilots.pilotImageMap[pilots.pilots[i].name] || '../src/images/placeholder.jpeg');
+                        placeHolder.src = (pilots.pilotImageMap[pilots.pilotsArray[i]] || '../src/images/placeholder.jpeg');
                         pilotName.classList.add('element-name');
-                        pilotName.textContent = pilots.pilots[i].name;
+                        pilotName.textContent = pilots.pilotsArray[i];
                         card.append(placeHolder, pilotName);
                         cardOrganizer.append(card);
                         loading.textContent = '';
@@ -45,15 +45,15 @@ export function setTabs() {
                 const loading = document.querySelector('#starships-loading');
                 fetchStarships().then(function(starships) {
                     deleteAllChildNodes();
-                    for (let i = 0; i <= starships.starships.length - 1; i++) {
+                    for (let i = 0; i <= starships.starshipsArray.length - 1; i++) {
                         const card = document.createElement('div');
                         card.classList.add('card');
                         const starshipName = document.createElement('div');
                         const placeHolder = document.createElement('img');
                         placeHolder.classList.add('placeholder');
-                        placeHolder.src = (starships.starshipsImageMap[starships.starships[i].name] || '../src/images/placeholder.jpeg');
+                        placeHolder.src = (starships.starshipsImageMap[starships.starshipsArray[i]] || '../src/images/placeholder.jpeg');
                         starshipName.classList.add('element-name');
-                        starshipName.textContent = starships.starships[i].name;
+                        starshipName.textContent = starships.starshipsArray[i];
                         card.append(placeHolder, starshipName);
                         cardOrganizer.append(card);
                         loading.textContent = '';
