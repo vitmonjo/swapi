@@ -1,7 +1,6 @@
-import { countInstances, checkExistence, getInstances } from "./localStorage"
+import { checkExistence, getInstances, storeRecords } from "./localStorage"
 
 export async function fetchStarships() {
-
     let starshipsArray = [];
 
     const starshipsImageMap = {
@@ -19,16 +18,26 @@ export async function fetchStarships() {
         'Imperial shuttle': 'https://i.imgur.com/sHfsxFx.jpg'
     }
 
+    if (checkExistence('STARSHIP')) starshipsArray = getInstances('STARSHIP');
+
+    if (starshipsArray.length > 0) return {starshipsImageMap, starshipsArray};
+
     const starshipsFetching = async () => {
         for (let i = 1; i < 5; i++) {
             let response = await fetch(`https://swapi.dev/api/starships/?page=${i}`);
             let starshipsData = await response.json();
-            starshipsArray = starshipsArray.concat(starshipsData.results);
+            for (let i = 0; i < starshipsData.results.length; i++) {
+                starshipsArray.push(starshipsData.results[i].name);
+            }
         }
         return starshipsArray;
     }
 
-    const starships = await starshipsFetching();
+    let starships = await starshipsFetching();
 
-    return {starshipsImageMap, starships};
+    storeRecords(starships, 'STARSHIP')
+
+    starshipsArray = starships;
+
+    return {starshipsImageMap, starshipsArray};
 }
