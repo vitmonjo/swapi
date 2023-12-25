@@ -20,6 +20,8 @@
    #### then()
    While async/await is used for more straightforward and readable asynchronous code, the traditional .then() syntax is also incorporated for situations where a more fine-grained control over the promise chain is necessary.
 
+<br>
+
 ### Technologies Used
 #### JavaScript;
 #### Webpack;
@@ -27,8 +29,12 @@
 #### CSS;
 #### Storage object.
 
+<br>
+
 ### Usage
   Users can use the application to check all Pilots, Starships and Planets available on the SWAPI, a handful of them even have custom pictures.
+
+<br>
 
 ### Screenshots
 
