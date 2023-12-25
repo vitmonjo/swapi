@@ -74,7 +74,7 @@ body {
 }
 
 .card {
-    height: 270px;
+    height: 320px;
     width: 320px;
     border: 3px solid #1F2738;
     display: flex;
@@ -93,9 +93,11 @@ body {
     overflow: hidden;
 }
 
-.element-name:hover, .card:hover {
-    background-color: #F56F36;
+.card:hover {
     border: 3px solid #F56F36;
+    .element-name {
+        background-color: #F56F36;
+    }
 }
 
 .placeholder {
