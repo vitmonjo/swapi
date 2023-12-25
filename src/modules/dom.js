@@ -29,7 +29,7 @@ export function setTabs() {
                         const pilotName = document.createElement('div');
                         const placeHolder = document.createElement('img');
                         placeHolder.classList.add('placeholder');
-                        placeHolder.src = (pilots.pilotImageMap[pilots.pilotsArray[i]] || '../src/images/placeholder.jpeg');
+                        placeHolder.src = (pilots.pilotImageMap[pilots.pilotsArray[i]] || '../images/placeholder.jpeg');
                         pilotName.classList.add('element-name');
                         pilotName.textContent = pilots.pilotsArray[i];
                         card.append(placeHolder, pilotName);
@@ -51,7 +51,7 @@ export function setTabs() {
                         const starshipName = document.createElement('div');
                         const placeHolder = document.createElement('img');
                         placeHolder.classList.add('placeholder');
-                        placeHolder.src = (starships.starshipsImageMap[starships.starshipsArray[i]] || '../src/images/placeholder.jpeg');
+                        placeHolder.src = (starships.starshipsImageMap[starships.starshipsArray[i]] || '../images/placeholder.jpeg');
                         starshipName.classList.add('element-name');
                         starshipName.textContent = starships.starshipsArray[i];
                         card.append(placeHolder, starshipName);
@@ -73,7 +73,7 @@ export function setTabs() {
                         const planetName = document.createElement('div');
                         const placeHolder = document.createElement('img');
                         placeHolder.classList.add('placeholder');
-                        placeHolder.src = (planets.planetsImageMap[planets.planetsArray[i]] || '../src/images/placeholder.jpeg');
+                        placeHolder.src = (planets.planetsImageMap[planets.planetsArray[i]] || '../images/placeholder.jpeg');
                         planetName.classList.add('element-name');
                         planetName.textContent = planets.planetsArray[i];
                         card.append(placeHolder, planetName);
